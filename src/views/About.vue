@@ -1,38 +1,42 @@
 <template>
-  <div class="about">
-    <div class="text-danger">
-      ...Please select order...
-    </div>
-    <div class="row">
-      <product
-        v-for="(item, index) in Menuitem"
-        :key="index"
-        :NameProduct="item.NameProduct"
-        :img="item.img"
-        :Price="item.Price"
-        @Order="menuorder"
-      />
-    </div>
+  <div>
+    <user :Total="Total" :Data="Data" />
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Orders</th>
+          <th scope="col">Price</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(mi, index) in Data" :key="index">
+          <td>{{ mi.NameProduct }}</td>
+          <td>{{ mi.Price }}</td>
+          <td>{{ mi.Amount }}</td>
+          <td>{{ mi.Total }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
+
 <script>
-import Product from "@/components/Product.vue";
+// @ is an alias to /src
+import User from "@/components/User.vue";
+
 export default {
-  components: { Product },
+  name: "Home",
+  components: {
+    User,
+  },
   props: {
-    Menuitem: Array,
+    Total: Number,
+    Data: Array,
   },
   data() {
-    return {
-      select: [],
-    };
-  },
-  methods: {
-    menuorder(value) {
-      this.select.push(value);
-      this.$emit("Order", this.select);
-    },
+    return {};
   },
 };
 </script>
-<style></style>

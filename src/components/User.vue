@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="card bg-1 mb-3" style="max-width: 120rem">
-      <div class="card-header">UserOrder</div>
+      <h3><div class="card-header">UserOrder</div></h3>
       <div class="card-body">
         <form>
             <div class="col">
@@ -16,7 +16,7 @@
               <input
                 type="text"
                 class="form-control"
-                placeholder="Telephone"
+                placeholder="Address/Telephone"
                 v-model="Tel"
               />
             </div>
@@ -64,12 +64,12 @@ export default {
 
 <style scoped>
 .bg-1 {
-  background-color: rgb(85, 85, 85);
+  background-color: rgb(109, 0, 64);
   color: rgb(255, 255, 255);
 }
 .card-body {
     flex: 1 1 auto;
     min-height: 1px;
-    padding: 2.5rem;
+    padding: 1.5rem;
 }
 </style>

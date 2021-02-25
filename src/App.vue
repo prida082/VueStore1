@@ -9,16 +9,16 @@
           ></b-icon>
         </router-link>
         |
-        <h3><router-link to="/about">CatStore</router-link></h3>
+        <h3><router-link to="/">CatStore</router-link></h3>
       </div>
       <div>
-        <router-link to="/">
-          <b-button pill variant="primary"
+        <router-link to="/about">
+          <b-button variant="primary"
             @click="submit()"
           >
            confirm
            </b-button>&nbsp; 
-          <b-button pill variant="success"
+          <b-button variant="success"
             @click="cleardata()"
           >
             Clear
@@ -96,7 +96,7 @@ export default {
     };
   },
   methods: {
-    //คิดยอดรวมทั้งหมด
+    //คิดยอดทั้งหมด
     submit() {
       this.Data = this.select;
       this.Total = 0;
